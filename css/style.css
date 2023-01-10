@@ -1,0 +1,197 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?rp1lj8');
+  src:  url('../fonts/icomoon.eot?rp1lj8#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?rp1lj8') format('truetype'),
+    url('../fonts/icomoon.woff?rp1lj8') format('woff'),
+    url('../fonts/icomoon.svg?rp1lj8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --main-bg-color: hsl(257, 40%, 49%);
+  --active-bg-color: hsl(300, 69%, 71%);
+  --default-font-color: white;
+  --default-font: 400 2rem/1.5 'Open Sans', 'Verdana', sans-serif;
+  --h1-a-font-family: 'Poppins', 'Verdana', sans-serif;
+  --desktop-bg-image: url(../images/bg-desktop.svg);
+  --mobile-bg-image: url(../images/bg-mobile.svg);
+}
+
+html{
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: no-repeat left top / 100% var(--mobile-bg-image) var(--main-bg-color);
+  color: var(--default-font-color);
+  display: flex;
+  flex-direction: column;
+  font: var(--default-font);
+  justify-content: space-between;
+  margin: auto;
+  min-height: 100vh;
+  padding: 2em 0;
+  width: 80vw;
+}
+
+h1 {
+  font: 600 3rem/1.25 var(--h1-a-font-family);
+  margin: 0.5em 0 0;
+}
+
+p {
+  margin: 1em 0 1.5em;
+}
+
+.logo:before {
+  content: url(../images/logo.svg);
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+main::before {
+  background: center / contain no-repeat url(../images/illustration-mockups.svg);
+  content: '';
+  display: block;
+  height: 20em;
+  width: 100%;
+}
+
+.text_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main a:hover {
+  background-color: var(--active-bg-color);
+  color: var(--default-font-color);
+}
+
+main a {
+  background: var(--default-font-color);
+  border-radius: 3em;
+  box-shadow: 0 0.2em 1em 0 hsla(192, 100%, 9%, 0.3);
+  color: var(--main-bg-color);
+  display: block;
+  font: 400 0.75em/1.5  var(--h1-a-font-family);
+  padding: 1em 0;
+  width: 60%;
+  min-width: 12em;
+}
+
+footer {
+  align-self: center;
+  margin: 4em 0 1em;
+}
+
+.social-icons {
+  display: flex;
+  font-size: 0.8em;
+  gap: 1em;
+}
+
+.social-icons a {
+  border: 0.05em solid;
+  border-radius: 170893px;
+  color: var(--default-font-color);
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  padding: 0.5em;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.social-icons a:hover {
+  color: var(--active-bg-color);
+
+}
+
+.social-icons li {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.facebook > a:before {
+  content: "\ea90";
+}
+.twitter > a:before {
+  content: "\ea96";
+}
+.instagram > a:before {
+  content: "\ea92";
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 60em) {
+  body {
+    background: no-repeat left top / auto 100% var(--desktop-bg-image) var(--main-bg-color);
+    padding: 1.5em 0;
+    width: 90vw;
+  }
+  main {
+    flex-direction: row;
+    gap: 5%;
+    text-align: left;
+  }
+  main:before {
+    flex: 5.5 1 0;
+    height: 16.5em;
+  }
+  .text_info{
+    flex: 3.5 1 0;
+  }
+  main a {
+    font-size: 0.6em;
+    padding: 0.6em 0;
+    text-align: center;
+    width: 38%;
+  }
+  .text_info {
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  p {
+    font-size: 1.1rem;
+    margin: 0.8em 0 1.5em;
+  }
+  footer {
+    align-self: flex-end;
+    margin: 0;
+  }
+  .social-icons {
+    font-size: 0.6em;
+    gap: 1em;
+  }
+  .social-icons a {
+    border: 0.1em solid;
+  }
+}
